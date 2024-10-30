@@ -29,6 +29,15 @@ import SwiftUI
     @AppStorage("password") var password = ""
     @AppStorage("serial") var serial = ""
     
+// #########################################################################
+//  Build identifiers
+// #########################################################################
+
+    
+    let product_name = Bundle.main.infoDictionary!["CFBundleName"] as? String
+    let product_version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String
+    let build_version = Bundle.main.infoDictionary?["CFBundleVersion"] as? String
+    
     // #########################################################################
     // The basic container for all prestages
     // #########################################################################
@@ -133,9 +142,12 @@ import SwiftUI
         request.httpMethod = "GET"
         request.setValue("Bearer \(authToken)", forHTTPHeaderField: "Authorization")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
-        request.addValue("\(product_name)/\(product_version)"), forHTTPHeaderField: "User-Agent")
+          request.addValue("\(String(describing: product_name ?? ""))/\(String(describing: build_version ?? ""))", forHTTPHeaderField: "User-Agent")
+        print("User-Agent is: \(String(describing: product_name))/\(String(describing: build_version))")
+
         separationLine()
-        print("User-Agent is: \(product_name)/\(product_version)")
+        print("User-Agent is: \(String(describing: product_name))/\(String(describing: build_version))")
+
         separationLine()
         print("Running func: getAllPrestages")
         
@@ -169,10 +181,12 @@ import SwiftUI
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.setValue("Bearer \(authToken)", forHTTPHeaderField: "Authorization")
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
-        request.addValue("\(product_name)/\(product_version)"), forHTTPHeaderField: "User-Agent")
+        request.addValue("\(String(describing: product_name ?? ""))/\(String(describing: build_version ?? ""))", forHTTPHeaderField: "User-Agent")
         separationLine()
-        print("User-Agent is: \(product_name)/\(product_version)")
+        print("User-Agent is: \(String(describing: product_name ?? ""))/\(String(describing: build_version ?? ""))")
+
+        separationLine()
+        print("User-Agent is: \(product_name)/\(build_version)")
         let sessionConfig = URLSessionConfiguration.default
         sessionConfig.timeoutIntervalForRequest = 30.0
         sessionConfig.timeoutIntervalForResource = 60.0
@@ -211,10 +225,12 @@ import SwiftUI
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.setValue("Bearer \(authToken)", forHTTPHeaderField: "Authorization")
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
-        request.addValue("\(product_name)/\(product_version)"), forHTTPHeaderField: "User-Agent")
+        request.addValue("\(String(describing: product_name ?? ""))/\(String(describing: build_version ?? ""))", forHTTPHeaderField: "User-Agent")
         separationLine()
-        print("User-Agent is: \(product_name)/\(product_version)")
+        print("User-Agent is: \(String(describing: product_name ?? ""))/\(String(describing: build_version ?? ""))")
+
+        separationLine()
+        print("User-Agent is: \(product_name)/\(build_version)")
         separationLine()
         print("Running:getPrestageCurrentScope for prestage id:\(prestageID)")
         
@@ -249,9 +265,10 @@ import SwiftUI
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.setValue("Bearer \(authToken)", forHTTPHeaderField: "Authorization")
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
-        request.addValue("\(product_name)/\(product_version)"), forHTTPHeaderField: "User-Agent")
-        print("User-Agent is: \(product_name)/\(product_version)")
+        request.addValue("\(String(describing: product_name ?? ""))/\(String(describing: build_version ?? ""))", forHTTPHeaderField: "User-Agent")
+        separationLine()
+        print("User-Agent is: \(String(describing: product_name ?? ""))/\(String(describing: build_version ?? ""))")
+
         
         separationLine()
         print("Running:getPrestageCurrentScopeToAdd for prestage id:\(prestageID)")
@@ -284,9 +301,12 @@ import SwiftUI
         request.setValue("Bearer \(authToken)", forHTTPHeaderField: "Authorization")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("\(product_name)/\(product_version)"), forHTTPHeaderField: "User-Agent")
+        request.addValue("\(String(describing: product_name ?? ""))/\(String(describing: build_version ?? ""))", forHTTPHeaderField: "User-Agent")
+        print("User-Agent is: \(String(describing: product_name))/\(String(describing: build_version))")
+
         separationLine()
-        print("User-Agent is: \(product_name)/\(product_version)")
+        print("User-Agent is: \(String(describing: product_name))/\(String(describing: build_version))")
+
         let json: [String: Any] = ["serialNumbers": [serial],
                                    "versionLock": depVersionLock]
         separationLine()
@@ -323,9 +343,10 @@ import SwiftUI
         request.setValue("Bearer \(authToken)", forHTTPHeaderField: "Authorization")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("\(product_name)/\(product_version)"), forHTTPHeaderField: "User-Agent")
+        request.addValue("\(String(describing: product_name ?? ""))/\(String(describing: build_version ?? ""))", forHTTPHeaderField: "User-Agent")
         separationLine()
-        print("User-Agent is: \(product_name)/\(product_version)")
+        print("User-Agent is: \(String(describing: product_name))/\(String(describing: build_version))")
+
         let json: [String: Any] = ["serialNumbers": [serial],
                                    "versionLock": depVersionLock]
         
@@ -364,10 +385,10 @@ import SwiftUI
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("Basic \(base64)", forHTTPHeaderField: "Authorization")
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
-        request.addValue("\(product_name)/\(product_version)"), forHTTPHeaderField: "User-Agent")
+        request.addValue("\(String(describing: product_name ?? ""))/\(String(describing: build_version ?? ""))", forHTTPHeaderField: "User-Agent")
         separationLine()
-        print("User-Agent is: \(product_name)/\(product_version)")
+        print("User-Agent is: \(String(describing: product_name ?? ""))/\(String(describing: build_version ?? ""))")
+
         let (data, response) = try await URLSession.shared.data(for: request)
         self.tokenStatusCode = (response as? HTTPURLResponse)?.statusCode ?? 0
         guard (response as? HTTPURLResponse)?.statusCode == 200 else {
@@ -398,9 +419,11 @@ import SwiftUI
         request.httpMethod = "GET"
         request.setValue("Bearer \(authToken)", forHTTPHeaderField: "Authorization")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
-        request.addValue("\(product_name)/\(product_version)"), forHTTPHeaderField: "User-Agent")
+        request.addValue("\(String(describing: product_name ?? ""))/\(String(describing: build_version ?? ""))", forHTTPHeaderField: "User-Agent")
         separationLine()
-        print("User-Agent is: \(product_name)/\(product_version)")
+        print("User-Agent is: \(String(describing: product_name ?? ""))/\(String(describing: build_version ?? ""))")
+
+
         let (data, response) = try await URLSession.shared.data(for: request)
         
         print("getComputersBasic - Json data is:")
