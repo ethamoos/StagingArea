@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A82E40EE2AC4A9DD00900B73 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82E40ED2AC4A9DD00900B73 /* Errors.swift */; };
+		A8B5DDC32CD92848005DBFB1 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = A8B5DDC22CD92847005DBFB1 /* LICENSE */; };
 		A8EF7E1C2CAC10E8003C4545 /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EF7E1B2CAC10E4003C4545 /* Progress.swift */; };
 		B969FCB5278F53DA009A6015 /* StagingAreaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B969FCB4278F53DA009A6015 /* StagingAreaApp.swift */; };
 		B969FCB7278F53DA009A6015 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B969FCB6278F53DA009A6015 /* ContentView.swift */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		A82E40ED2AC4A9DD00900B73 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		A8B5DDC22CD92847005DBFB1 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		A8EF7E1B2CAC10E4003C4545 /* Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
 		B969FCB1278F53D9009A6015 /* JamfStagingArea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JamfStagingArea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B969FCB4278F53DA009A6015 /* StagingAreaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StagingAreaApp.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				B969FCBD278F53DC009A6015 /* StagingArea.entitlements */,
 				B969FCBA278F53DC009A6015 /* Preview Content */,
 				E488693128B3EE63004F2643 /* Credits.rtf */,
+				A8B5DDC22CD92847005DBFB1 /* LICENSE */,
 			);
 			path = StagingArea;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 			files = (
 				B969FCBC278F53DC009A6015 /* Preview Assets.xcassets in Resources */,
 				E488693228B3EE63004F2643 /* Credits.rtf in Resources */,
+				A8B5DDC32CD92848005DBFB1 /* LICENSE in Resources */,
 				B969FCB9278F53DC009A6015 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,7 +367,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1.5.1;
+				CURRENT_PROJECT_VERSION = 1.5.4;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"StagingArea/Preview Content\"";
 				DEVELOPMENT_TEAM = T8LP25947P;
@@ -399,7 +403,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1.5.1;
+				CURRENT_PROJECT_VERSION = 1.5.4;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"StagingArea/Preview Content\"";
 				DEVELOPMENT_TEAM = T8LP25947P;
