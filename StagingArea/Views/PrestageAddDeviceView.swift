@@ -12,7 +12,6 @@ import SwiftUI
 //      PrestageAddDeviceView
 //    #################################################################################
 
-
 struct PrestageAddDeviceView: View {
     
     //      Allows the user to add a device not assigned to a prestage
@@ -30,7 +29,6 @@ struct PrestageAddDeviceView: View {
         GridItem(.flexible()),
     ]
     
-    
     var body: some View {
         
         VStack(alignment: .leading) {
@@ -38,9 +36,7 @@ struct PrestageAddDeviceView: View {
             LazyVGrid(columns: columns, spacing: 20) {
                 
                 HStack {
-                    
                     Label("serial", systemImage: "globe")
-                    
                     TextField("serial", text: $serial)
                 }
             }
@@ -68,10 +64,9 @@ struct PrestageAddDeviceView: View {
                 .padding(.all)
                 .navigationTitle("Add Unassigned Device")
         }
-        
+        .padding(.all)
+
 #if os(iOS)
-        .padding(20)
-    
         .padding(20)
         .border(Color.blue)
         .offset(y: 15)
@@ -80,10 +75,8 @@ struct PrestageAddDeviceView: View {
     
     
     func showPrestage(targetPrestageID: String) {
-        
         prestageController.separationLine()
         print("Running: showPrestage")
-        
         Task {
             try await prestageController.addDeviceToPrestage(server: prestageController.server, prestageID: targetPrestageID, serial: serial, authToken: prestageController.authToken, depVersionLock: prestageController.depVersionLock)
         }

@@ -48,10 +48,8 @@ struct PrestagesEditView: View {
     @State var selectedPrestageTarget: PreStage = PreStage(keepExistingSiteMembership: (0 != 0), enrollmentSiteId: "", id: "", displayName: "")
     
     @State var computerSelection: String = ""
- 
     
     var body: some View {
-        
         
         let serialsPrestageName = Array (prestageController.serialPrestageAssignment.keys)
         
@@ -73,7 +71,7 @@ struct PrestagesEditView: View {
                     }
                     .foregroundColor(.blue)
                 }
-                    .offset(y: 15)
+//                    .offset(y: 15)
 
                 Divider()
                     
@@ -98,7 +96,6 @@ struct PrestagesEditView: View {
 #if os(iOS)
                         Text("Target Prestage:")
 #endif
-                        
                         LazyVGrid(columns: columns, spacing: 20) {
                             Picker(selection: $selectedPrestageTarget, label: Text("Target Prestage:")) {
                                 Text("").tag("") //basically added empty tag and it solve the case
@@ -214,11 +211,23 @@ struct PrestagesEditView: View {
             // ################################################################################
             
             VStack(alignment: .leading) {
-                
-                Text("Unassign Device").bold()
-                
-                if prestageController.allPsScComplete == true && prestageController.serialPrestageAssignment.count > 0 {
-                                        
+                                
+//                if prestageController.allPsScComplete == true &&
+//                    if prestageController.serialPrestageAssignment.count > 0 {
+                               
+                    Text("Unassign Device").bold()
+                    
+                    LazyVGrid(columns: columns, spacing: 20) {
+                        
+                        HStack {
+    #if os(macOS)
+                            Label("serial", systemImage: "globe")
+    #endif
+                            TextField("serial", text: $serial)
+                        }
+                        .foregroundColor(.blue)
+                    }
+                    
                     Button(action: {
                         updatePrestage(initialPrestageID: initialPrestageID, authToken: prestageController.authToken)
                     }) {
@@ -229,25 +238,9 @@ struct PrestagesEditView: View {
                     }
                     .buttonStyle(.borderedProminent)
                     .tint(.red)
-                    
-                } else {
-                    
-                    if prestageController.allPsScComplete == false {
-                        
-                        ProgressView {
-                            
-                            Text("Loading")
-                            
-                        }
-                        
-                    } else {
-                        
-                        Text("No Devices Assigned To A Prestage")
-                    }
-                }
+//                }
             }
             .padding()
-            .offset(x: 100, y: 80 )
             .navigationBarBackButtonHidden(true)
 
             Divider()
@@ -261,12 +254,20 @@ struct PrestagesEditView: View {
                             try await  prestageController.getAllPrestages(server: server, authToken: prestageController.authToken)
                         }
                     }
+                    
+                    if prestageController.allPrestages.count > 0 {
+                        
+                        Task {
+                            
+                            print("Running: getAllPrestages")
+                            
+                            try await prestageController.getAllPrestages(server: server, authToken: prestageController.authToken)
+                        }
+                        
+                    }
                 }
         }
-//        .padding(.top)
-//        .padding(.bottom)
-        .padding(20)
-    
+//        .padding(20)
     }
     
     var searchResults: [String] {
@@ -278,9 +279,7 @@ struct PrestagesEditView: View {
             return serialsArray
             
         } else {
-            
             return serialsArray.filter { $0.contains(searchText) }
-            
         }
     }
     
