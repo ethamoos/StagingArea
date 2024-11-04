@@ -35,10 +35,9 @@ To view what prestage a device is assigned to requires the following steps
 ![global management 2](https://github.com/user-attachments/assets/1eba8850-0617-4bd1-bead-16cf5f8e7db9)
 
 
-Select Devices within Automated Device Enrollment
+**Select Devices within Automated Device Enrollment**
 
 ![ABM](https://github.com/user-attachments/assets/e221ce85-f783-496c-a3af-c4afa005fc1f)
-
 **Select Apple School Manager or Apple Business Manager within Automated Device Enrollment**
 
 ![select ABM](https://github.com/user-attachments/assets/b2c7a80b-c88f-4785-ae8d-c2e90ecde876)
@@ -48,19 +47,20 @@ Select Devices within Automated Device Enrollment
 
 ![filter device edit](https://github.com/user-attachments/assets/ec68a133-401e-4d6b-a195-e7045cfc0c22)
 
+**Moving Devices Between Prestages**
 
-Ideally, once a device is added to a pre-stage that is where it will stay, but in reality devices often move between pre-stages. 
+Ideally, once a device is added to a pre-stage that is where it will stay, but in reality devices often move between pre-stages and there are various scenarios that require that.
 
-Perhaps from a test to a live pre-stage
-Or a device has been assigned to the wrong prestage and needs to be rebuilt. 
-Sometimes, a device is within Jamf, but not in a prestage at all. 
+* Moving from a test to a live pre-stage
+* A device has been assigned to the wrong prestage and needs to be rebuilt. 
+* A device is within Jamf, but not in a prestage at all. 
+
 As we can see, managing this is something which is currently quite clunky within the JSS and requires a lot of navigation.
 
 
 **StagingArea** is a simple tool which will make this easier. Currently, it will do the following:
 
-List all prestages available in Jamf
-Each prestage can be clicked on to get full details
+* List all prestages available in Jamf - each prestage can be clicked on to get full details
 
 * List all devices in a jamf instance enrolled in a pre-stage
 * Each device can then be moved to a different prestage
@@ -68,4 +68,3 @@ Each prestage can be clicked on to get full details
 * Select a device by ID and then change its assigned prestage
 * Enter a device not currently assigned to a prestage and add it to one
 * Remove a device from a prestage
-****
