@@ -186,7 +186,7 @@ import SwiftUI
         print("User-Agent is: \(String(describing: product_name ?? ""))/\(String(describing: build_version ?? ""))")
 
         separationLine()
-        print("User-Agent is: \(product_name)/\(build_version)")
+        print("User-Agent is: \(String(describing: product_name))/\(String(describing: build_version))")
         let sessionConfig = URLSessionConfiguration.default
         sessionConfig.timeoutIntervalForRequest = 30.0
         sessionConfig.timeoutIntervalForResource = 60.0
@@ -230,7 +230,7 @@ import SwiftUI
         print("User-Agent is: \(String(describing: product_name ?? ""))/\(String(describing: build_version ?? ""))")
 
         separationLine()
-        print("User-Agent is: \(product_name)/\(build_version)")
+        print("User-Agent is: \(String(describing: product_name))/\(String(describing: build_version))")
         separationLine()
         print("Running:getPrestageCurrentScope for prestage id:\(prestageID)")
         
