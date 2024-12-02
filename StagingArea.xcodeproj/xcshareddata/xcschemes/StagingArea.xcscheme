@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B969FCB0278F53D9009A6015"
-               BuildableName = "JamfStagingArea.app"
-               BlueprintName = "JamfStagingArea"
-               ReferencedContainer = "container:JamfStagingArea.xcodeproj">
+               BuildableName = "StagingArea.app"
+               BlueprintName = "StagingArea"
+               ReferencedContainer = "container:StagingArea.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B969FCB0278F53D9009A6015"
-            BuildableName = "JamfStagingArea.app"
-            BlueprintName = "JamfStagingArea"
-            ReferencedContainer = "container:JamfStagingArea.xcodeproj">
+            BuildableName = "StagingArea.app"
+            BlueprintName = "StagingArea"
+            ReferencedContainer = "container:StagingArea.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B969FCB0278F53D9009A6015"
-            BuildableName = "JamfStagingArea.app"
-            BlueprintName = "JamfStagingArea"
-            ReferencedContainer = "container:JamfStagingArea.xcodeproj">
+            BuildableName = "StagingArea.app"
+            BlueprintName = "StagingArea"
+            ReferencedContainer = "container:StagingArea.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

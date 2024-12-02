@@ -34,7 +34,7 @@
 		A82E40ED2AC4A9DD00900B73 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		A8B5DDC22CD92847005DBFB1 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		A8EF7E1B2CAC10E4003C4545 /* Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
-		B969FCB1278F53D9009A6015 /* JamfStagingArea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JamfStagingArea.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B969FCB1278F53D9009A6015 /* StagingArea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StagingArea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B969FCB4278F53DA009A6015 /* StagingAreaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StagingAreaApp.swift; sourceTree = "<group>"; };
 		B969FCB6278F53DA009A6015 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B969FCB8278F53DC009A6015 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 		B969FCB2278F53D9009A6015 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B969FCB1278F53D9009A6015 /* JamfStagingArea.app */,
+				B969FCB1278F53D9009A6015 /* StagingArea.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -147,9 +147,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B969FCB0278F53D9009A6015 /* JamfStagingArea */ = {
+		B969FCB0278F53D9009A6015 /* StagingArea */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B969FCC0278F53DC009A6015 /* Build configuration list for PBXNativeTarget "JamfStagingArea" */;
+			buildConfigurationList = B969FCC0278F53DC009A6015 /* Build configuration list for PBXNativeTarget "StagingArea" */;
 			buildPhases = (
 				B969FCAD278F53D9009A6015 /* Sources */,
 				B969FCAE278F53D9009A6015 /* Frameworks */,
@@ -159,9 +159,9 @@
 			);
 			dependencies = (
 			);
-			name = JamfStagingArea;
+			name = StagingArea;
 			productName = StagingArea;
-			productReference = B969FCB1278F53D9009A6015 /* JamfStagingArea.app */;
+			productReference = B969FCB1278F53D9009A6015 /* StagingArea.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -179,7 +179,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B969FCAC278F53D9009A6015 /* Build configuration list for PBXProject "JamfStagingArea" */;
+			buildConfigurationList = B969FCAC278F53D9009A6015 /* Build configuration list for PBXProject "StagingArea" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -192,7 +192,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B969FCB0278F53D9009A6015 /* JamfStagingArea */,
+				B969FCB0278F53D9009A6015 /* StagingArea */,
 			);
 		};
 /* End PBXProject section */
@@ -374,7 +374,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = JamfStagingArea;
+				INFOPLIST_KEY_CFBundleDisplayName = StagingArea;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -410,7 +410,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = JamfStagingArea;
+				INFOPLIST_KEY_CFBundleDisplayName = StagingArea;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -432,7 +432,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B969FCAC278F53D9009A6015 /* Build configuration list for PBXProject "JamfStagingArea" */ = {
+		B969FCAC278F53D9009A6015 /* Build configuration list for PBXProject "StagingArea" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B969FCBE278F53DC009A6015 /* Debug */,
@@ -441,7 +441,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B969FCC0278F53DC009A6015 /* Build configuration list for PBXNativeTarget "JamfStagingArea" */ = {
+		B969FCC0278F53DC009A6015 /* Build configuration list for PBXNativeTarget "StagingArea" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B969FCC1278F53DC009A6015 /* Debug */,
