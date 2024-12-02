@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 76;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -56,6 +56,30 @@
 		E4D6281228CFA77300966241 /* PrestageRemoveDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrestageRemoveDeviceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		A894BE252CFDB50400DA33CC /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				/Localized/Localizable/Localizable.localizable,
+			);
+			target = B969FCB0278F53D9009A6015 /* StagingArea */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		A894BE262CFDB50400DA33CC /* PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = B969FCAD278F53D9009A6015 /* Sources */;
+			membershipExceptions = (
+				/Localized/Localizable/Localizable.localizable,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		A894BE242CFDB4DC00DA33CC /* Resources */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (A894BE252CFDB50400DA33CC /* PBXFileSystemSynchronizedBuildFileExceptionSet */, A894BE262CFDB50400DA33CC /* PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Resources; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		B969FCAE278F53D9009A6015 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -86,6 +110,7 @@
 		B969FCB3278F53D9009A6015 /* StagingArea */ = {
 			isa = PBXGroup;
 			children = (
+				A894BE242CFDB4DC00DA33CC /* Resources */,
 				B969FCB4278F53DA009A6015 /* StagingAreaApp.swift */,
 				E404D8F827E1DFAF007D2395 /* Views */,
 				B969FCC3278F543B009A6015 /* PrestageBrain.swift */,
@@ -159,6 +184,9 @@
 			);
 			dependencies = (
 			);
+			fileSystemSynchronizedGroups = (
+				A894BE242CFDB4DC00DA33CC /* Resources */,
+			);
 			name = StagingArea;
 			productName = StagingArea;
 			productReference = B969FCB1278F53D9009A6015 /* StagingArea.app */;
@@ -180,14 +208,15 @@
 				};
 			};
 			buildConfigurationList = B969FCAC278F53D9009A6015 /* Build configuration list for PBXProject "StagingArea" */;
-			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = B969FCA8278F53D9009A6015;
+			preferredProjectObjectVersion = 55;
 			productRefGroup = B969FCB2278F53D9009A6015 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";

@@ -20,6 +20,7 @@ struct ContentView: View {
     @State var showLoginScreen = true
     
     var body: some View {
+        
         if showLoginScreen {
             LoginView(showLoginScreen: $showLoginScreen)
         } else {

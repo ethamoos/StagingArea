@@ -36,6 +36,13 @@ struct LoginView: View {
             VStack(alignment: .leading, spacing: 20) {
                 
                 
+                VStack {
+                        Text(LocalizedStringKey("Welcome"))
+                            .font(.title)
+                    }
+                    .padding()
+                
+                
 
                 LazyVGrid(columns: columns, spacing: 20) {
 
