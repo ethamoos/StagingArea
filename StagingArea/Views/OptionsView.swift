@@ -94,7 +94,9 @@ struct OptionsView: View {
                 }
             }
         }
-       
+        .alert(isPresented: $prestageController.showingAlert) {
+            Alert(title: Text("Error"), message: Text("Login Failed - Check Credentials"), dismissButton: .default(Text("OK")))
+        }
         
         .onAppear {
             

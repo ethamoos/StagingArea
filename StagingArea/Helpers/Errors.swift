@@ -12,5 +12,12 @@ enum DataError: Error {
     case NetworkTimeout
     case NoData
     case UnknownError
+    case couldntEncodeNamePass
+    case badResponseCode
 
 }
+
+//enum NetError: Error {
+//    case couldntEncodeNamePass
+//    case badResponseCode
+//}

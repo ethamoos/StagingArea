@@ -10,10 +10,7 @@ import SwiftUI
     
 @MainActor class PrestageBrain: ObservableObject {
 
-    enum NetError: Error {
-        case couldntEncodeNamePass
-        case badResponseCode
-    }
+
     
     struct JamfProAuth: Decodable {
         let token: String
@@ -22,6 +19,8 @@ import SwiftUI
     
     @Published var searchText = ""
     @Published var status: Status = .none
+    @Published var showingAlert = false
+
 
     @AppStorage("needsLogin") var needsLogin = true
     @AppStorage("server") var server = ""
@@ -156,7 +155,7 @@ import SwiftUI
 //        print(String(data: data, encoding: .utf8) ?? "no data")
         guard (response as? HTTPURLResponse)?.statusCode == 200 else {
             print("Code not 200 - response is:\(response)")
-            throw NetError.badResponseCode
+            throw DataError.badResponseCode
         }
         
         let decoder = JSONDecoder()
@@ -201,7 +200,7 @@ import SwiftUI
         
         guard (response as? HTTPURLResponse)?.statusCode == 200 else {
             print("Code not 200 - response is:\(response)")
-            throw NetError.badResponseCode
+            throw DataError.badResponseCode
         }
         
         let decoder = JSONDecoder()
@@ -239,7 +238,7 @@ import SwiftUI
 //        print(String(data: data, encoding: .utf8) ?? "no data")
         guard (response as? HTTPURLResponse)?.statusCode == 200 else {
             print("Code not 200 - response is:\(response)")
-            throw NetError.badResponseCode
+            throw DataError.badResponseCode
         }
         
         let decoder = JSONDecoder()
@@ -275,7 +274,7 @@ import SwiftUI
         let (data, response) = try await URLSession.shared.data(for: request)
         guard (response as? HTTPURLResponse)?.statusCode == 200 else {
             print("Code not 200 - response is:\(response)")
-            throw NetError.badResponseCode
+            throw DataError.badResponseCode
         }
         
         let decoder = JSONDecoder()
@@ -325,7 +324,7 @@ import SwiftUI
         
         guard (response as? HTTPURLResponse)?.statusCode == 200 else {
             print("Code not 200 - response is:\(response)")
-            throw NetError.badResponseCode
+            throw DataError.badResponseCode
         }
     }
     
@@ -363,7 +362,7 @@ import SwiftUI
         let (data, response) = try await URLSession.shared.data(for: request)
         guard (response as? HTTPURLResponse)?.statusCode == 200 else {
             print("Code not 200 - response is:\(response)")
-            throw NetError.badResponseCode
+            throw DataError.badResponseCode
         }
     }
     
@@ -377,7 +376,8 @@ import SwiftUI
         
         guard let base64 = encodeBase64(username: username, password: password) else {
             print("Error encoding username/password")
-            throw NetError.couldntEncodeNamePass
+            self.tokenComplete = true
+            throw DataError.couldntEncodeNamePass
         }
         
         let tokenURLString = server + "/api/v1/auth/token"
@@ -392,8 +392,10 @@ import SwiftUI
         let (data, response) = try await URLSession.shared.data(for: request)
         self.tokenStatusCode = (response as? HTTPURLResponse)?.statusCode ?? 0
         guard (response as? HTTPURLResponse)?.statusCode == 200 else {
-            print("Code not 200")
-            throw NetError.badResponseCode
+            print("Authentication response not 200")
+            self.tokenComplete = true
+            self.showingAlert = true
+            throw DataError.AuthenticationFailure
         }
         
         let auth = try JSONDecoder().decode(JamfProAuth.self, from: data)
@@ -431,7 +433,7 @@ import SwiftUI
 
         guard (response as? HTTPURLResponse)?.statusCode == 200 else {
             print("Code not 200 - response is:\(response)")
-            throw NetError.badResponseCode
+            throw DataError.badResponseCode
         }
 
         let decoder = JSONDecoder()
