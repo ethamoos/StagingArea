@@ -29,6 +29,10 @@ struct PrestagesEditView: View {
     
     @State var targetPrestageID: String
     
+    @State var currentPrestage: PreStage = PreStage(keepExistingSiteMembership: false, enrollmentSiteId: "", id: "", displayName: "")
+
+    @State var currentPrestageName = ""
+    
     @State var serial: String
         
     @State var confirmedSerial: String = ""
@@ -53,6 +57,7 @@ struct PrestagesEditView: View {
         
         let serialsPrestageName = Array (prestageController.serialPrestageAssignment.keys)
         
+        
         VStack(alignment: .leading) {
             
                 VStack(alignment: .leading) {
@@ -72,7 +77,25 @@ struct PrestagesEditView: View {
                     .foregroundColor(.blue)
                 }
 //                    .offset(y: 15)
+                    
+                    Divider()
+                    
+                    Text("Current Prestage Name:").bold()
+                    
+                    //                VStack(alignment: .leading, spacing: 20) {
+                    LazyVGrid(columns: columns, spacing: 20) {
+                        
+                        HStack {
+                            
+                            Label("Name", systemImage: "globe")
+//                            Text("\(currentPrestage.displayName)")
+                            TextField("Name", text: $currentPrestageName)
 
+                            
+                        }
+                        .foregroundColor(.blue)
+                    }
+                    
                 Divider()
                     
                 Text("Current Prestage ID:").bold()
@@ -248,6 +271,7 @@ struct PrestagesEditView: View {
             
                 .onAppear() {
  
+
                     if prestageController.prestages.count < 1 {
                         
                         Task {
@@ -265,9 +289,16 @@ struct PrestagesEditView: View {
                         }
                         
                     }
+                    
+                    
                 }
         }
 //        .padding(20)
+        .onAppear() {
+            getCurrentPrestageName(initialPrestageID: initialPrestageID)
+            currentPrestageName = self.currentPrestage.displayName
+
+        }
     }
     
     var searchResults: [String] {
@@ -342,6 +373,21 @@ struct PrestagesEditView: View {
             try await prestageController.getAllDevicesPrestageScope(server: server, prestageID: targetPrestageID, authToken: prestageController.authToken)
             
             showProgressScreen = false
+        }
+    }
+    
+
+    func getCurrentPrestageName(initialPrestageID: String) {
+        
+        print("Running: getCurrentPrestageName")
+        for eachPrestage in prestageController.allPrestages {
+            
+            print("Prestage is:\(eachPrestage.id)")
+            
+            if eachPrestage.id == initialPrestageID {
+                print("We have a match")
+                self.currentPrestage = eachPrestage
+            }
         }
     }
 }
